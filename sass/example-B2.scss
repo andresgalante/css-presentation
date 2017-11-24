@@ -1,0 +1,170 @@
+// Variables
+
+// `$component-state-property-size` formula
+
+$line-height: 1.5 !default;
+
+$border-width: 1px !default;
+$border-style: solid !default;
+
+$spacer: 1rem !default;
+$spacer-sm: .5rem !default;
+
+$primary: black !default;
+$secondary: lightgray !default;
+$light: white !default;
+
+$font-size-base: 1rem !default;
+
+/*
+Resets box size
+*/
+
+html {
+  box-sizing: border-box;
+  color: $primary;
+  line-height: $line-height;
+  height: 100%;
+  background-color: $secondary;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  // centers the card
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 1rem;
+}
+
+@media (min-width: 50em) {
+  .card {
+    width: 50%;
+  }
+}
+
+/*
+Card Component
+*/
+
+$card-border-width:         $border-width;
+$card-border-color:         $primary;
+$card-background-color:     $light;
+
+$card-header-border-width:  $border-width;
+$card-header-border-color:  $primary;
+$card-header-padding-x:     $spacer;
+
+$card-header-title-size:    $font-size-base;
+
+$card-header-body-padding:  $spacer;
+
+.card {
+  background-color: #fff;
+  border: $card-border-width solid black;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    padding-left: $card-header-padding-x;
+    border-bottom: $card-header-border-width solid $card-header-border-color;
+  }
+
+  &__title {
+    font-size: $card-header-title-size;
+    display: flex;
+    align-self: center;
+  }
+
+  &__body {
+    padding: $card-header-body-padding;
+    nav {
+      display: block;
+    }
+  }
+}
+
+
+
+
+/*
+ Nav Component
+*/
+
+$nav-item-border-width:  $border-width;
+$nav-item-border-color:  $primary;
+
+$nav-link-padding-x:  $spacer;
+$nav-link-color:      $primary;
+
+.nav, nav {
+  // reset list
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  display: flex;
+  align-items: stretch;
+
+  &__item {
+    border-left: $nav-item-border-width solid $nav-item-border-color;
+    display: flex;
+    align-items: stretch;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    padding-right: $nav-link-padding-x;
+    padding-left: $nav-link-padding-x;
+    text-decoration: none;
+    color: $nav-link-color;
+
+    &--active,
+    &:hover {
+      background-image: linear-gradient(to top, $nav-item-border-color 3px, transparent 3px);
+    }
+  }
+}
+
+
+
+
+// Secondary Nav component
+
+$secondary-nav-item-border-width:  $border-width;
+$secondary-nav-item-border-color:  $primary;
+
+$secondary-nav-link-padding-y:  $spacer-sm;
+$secondary-nav-link-padding-x:  $spacer;
+$secondary-nav-link-color:      $primary;
+
+.secondary-nav {
+  margin: 0 -1em;
+  padding: 0 1em;
+  list-style: none;
+
+  display: flex;
+  align-items: stretch;
+  border-bottom: $secondary-nav-item-border-width solid $secondary-nav-item-border-color;
+
+  &__item {
+    display: flex;
+    align-items: stretch;
+  }
+  &__link {
+    display: flex;
+    align-items: center;
+    padding: $secondary-nav-link-padding-y $secondary-nav-link-padding-y;
+    text-decoration: none;
+    color: $secondary-nav-link-color;
+    &--active,
+    &:hover {
+      background-image: linear-gradient(to top, $secondary-nav-item-border-color 3px, transparent 3px);
+    }
+  }
+}

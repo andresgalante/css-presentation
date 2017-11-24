@@ -1,0 +1,94 @@
+/*
+Resets box size
+*/
+
+html {
+  box-sizing: border-box;
+  color: black;
+  line-height: 1.5;
+  height: 100%;
+  background-color: lightgray;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  // centers the card
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 1rem;
+}
+
+@media (min-width: 50em) {
+  .card {
+    width: 50%;
+  }
+}
+
+/*
+Card Component
+*/
+
+
+.card {
+  background-color: white;
+  border: 1px solid black;
+
+  &__header {
+    // display: flex;
+    // justify-content: space-between;
+    padding-left: 1rem;
+    border-bottom: 1px solid black;
+  }
+
+  &__title {
+    // display: flex;
+    // align-self: center;
+    font-size: 1rem;
+  }
+
+  &__body {
+    padding: 1rem;
+  }
+}
+
+
+
+
+/*
+ Nav Component
+*/
+
+.nav, nav {
+  // display: flex;
+  // align-items: stretch;
+
+  // reset list
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &__item {
+    // display: flex;
+    // align-items: stretch;
+    border-left: 1px solid black;
+  }
+
+  &__link {
+    // display: flex;
+    // align-items: center;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    text-decoration: none;
+    color: black;
+
+    &--active,
+    &:hover {
+      background-image: linear-gradient(to top, black 3px, transparent 3px);
+    }
+  }
+}

@@ -1,0 +1,75 @@
+/*
+Resets box size
+*/
+
+html {
+  box-sizing: border-box;
+  color: black;
+  line-height: 1.5;
+  height: 100%;
+  background-color: lightgray;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  height: 100%;
+  padding: 1rem;
+}
+
+@media (min-width: 50em) {
+  .card {
+    width: 50%;
+  }
+}
+
+/*
+Card Component
+*/
+
+
+.card {
+  background-color: white;
+  border: 1px solid black;
+  transform: translateY(-50%);
+  position: relative;
+  top: 50%;
+  margin: auto;
+}
+
+.header {
+  border-bottom: 1px solid black;
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .name {
+    margin: 0;
+    font-size: 1rem;
+    float: left;
+    padding: 1rem;
+  }
+
+  a {
+    float: right;
+    padding: 1rem;
+    border-left: 1px solid black;
+    color: black;
+    text-decoration: none;
+    &.active,
+    &:hover {
+      background-image: linear-gradient(to top, black 3px, transparent 3px);
+    }
+  }
+
+}
+
+
+.body {
+  padding: 1rem;
+}

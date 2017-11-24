@@ -1,0 +1,196 @@
+// Variables
+
+// `$component-state-property-size` formula
+
+$line-height: 1.5 !default;
+
+$border-width: 1px !default;
+$border-style: solid !default;
+
+$spacer: 1rem !default;
+$spacer-sm: .5rem !default;
+
+$black: black !default;
+$gray: lightgray !default;
+$white: white !default;
+
+$font-size-base: 1rem !default;
+
+/*
+Resets box size
+*/
+
+html {
+  box-sizing: border-box;
+  color: $black;
+  line-height: $line-height;
+  height: 100%;
+  background-color: $gray;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+
+
+/*
+Container lauyout
+*/
+
+$container-padding: $spacer;
+
+.container-l {
+  padding: $container-padding;
+}
+
+
+
+
+/*
+Galery lauyout
+*/
+
+$galery-grid-gap: $spacer;
+
+.galery-l {
+  display: grid;
+  grid-gap: $galery-grid-gap;
+  grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+}
+
+
+
+
+/*
+Card Component
+*/
+
+$card-border-width:         $border-width;
+$card-border-color:         $black;
+$card-background-color:     $white;
+
+$card-header-border-width:  $border-width;
+$card-header-border-color:  $black;
+$card-header-padding-x:     $spacer;
+
+$card-header-title-size:    $font-size-base;
+
+$card-header-body-padding:  $spacer;
+
+.card-c {
+  background-color: #fff;
+  border: $card-border-width solid black;
+
+  &--header {
+    display: flex;
+    justify-content: space-between;
+    padding-left: $card-header-padding-x;
+    border-bottom: $card-header-border-width solid $card-header-border-color;
+  }
+
+  &--title {
+    font-size: $card-header-title-size;
+  }
+
+  &--body {
+    padding: $card-header-body-padding;
+  }
+}
+
+
+
+
+/*
+ Nav Component
+*/
+
+$nav-item-border-width:  $border-width;
+$nav-item-border-color:  $black;
+
+$nav-link-padding-x:  $spacer;
+$nav-link-color:      $black;
+
+.nav-c {
+  // reset list
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  display: flex;
+  align-items: stretch;
+
+  &--item {
+    border-left: $nav-item-border-width solid $nav-item-border-color;
+    display: flex;
+    align-items: stretch;
+  }
+
+  &--link {
+    display: flex;
+    align-items: center;
+    padding-right: $nav-link-padding-x;
+    padding-left: $nav-link-padding-x;
+    text-decoration: none;
+    color: $nav-link-color;
+
+    &__active,
+    &:hover {
+      background-image: linear-gradient(to top, black 3px, transparent 3px);
+    }
+  }
+}
+
+
+
+
+// Secondary Nav component
+
+$secondary-nav-item-border-width:  $border-width;
+$secondary-nav-item-border-color:  $black;
+
+$secondary-nav-link-padding-y:  $spacer-sm;
+$secondary-nav-link-padding-x:  $spacer;
+$secondary-nav-link-color:      $black;
+
+.secondary-nav-c {
+  // reset list... I know, this should be a contextual selector
+  margin: 0 -1em;
+  padding: 0 1em;
+  list-style: none;
+
+  display: flex;
+  align-items: stretch;
+  border-bottom: $secondary-nav-item-border-width solid $secondary-nav-item-border-color;
+
+  &--item {
+    display: flex;
+    align-items: stretch;
+  }
+  &--link {
+    display: flex;
+    align-items: center;
+    padding: $secondary-nav-link-padding-y $secondary-nav-link-padding-y;
+    text-decoration: none;
+    color: $secondary-nav-link-color;
+    &__active,
+    &:hover {
+      background-image: linear-gradient(to top, black 3px, transparent 3px);
+    }
+  }
+}
+
+
+
+//
+// body {
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+
+// @media (min-width: 50em) {
+//   .card {
+//     width: 50%;
+//   }
+// }
